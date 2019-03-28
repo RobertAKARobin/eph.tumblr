@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>{Title}</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="Alice">
+		{block:Description}
+		<meta name="description" content="{MetaDescription}">
+		{/block:Description}
+		<link rel="shortcut icon" href="{Favicon}" />
+
+		<meta name="color:Page Background Color" content="#FFF5F4">
+		<meta name="color:Sidebar Background Color" content="#FFECEB">
+		<meta name="color:Sidebar Font Color" content="#F5A9C0">
+		<meta name="color:Post Body Color" content="#8B8B8B">
+
+		<meta name="text:Link 1" content="">
+		<meta name="text:Link 1 URL" content="/">
+		<meta name="text:Link 2" content="">
+		<meta name="text:Link 2 URL" content="/">
+		<meta name="text:Link 3" content="">
+		<meta name="text:Link 3 URL" content="/">
+		<meta name="text:Link 4" content="">
+		<meta name="text:Link 4 URL" content="/">
+		<meta name="text:Link 5" content="">
+		<meta name="text:Link 5 URL" content="/">
+	   
+		<meta name="if:Show Link 1" content="1">
+		<meta name="if:Show Link 2" content="1">
+		<meta name="if:Show Link 3" content="1">
+		<meta name="if:Show Link 4" content="1">
+		<meta name="if:Show Link 5" content="1">
+	</head>
+   
+	<body>
+		<div>
+			<div>
+				<div>
+					{block:ShowAvatar}
+					<img src="{PortraitURL-128}" width="100" height="100">
+					{/block:ShowAvatar}
+					<h1 id="sidebar-title"><a id="title" href="/">{Title}</a></h1>
+					<p id="sidebar-description">{Description}</p>
+				   
+					<div>
+						<ul>
+							{block:IfShowLink1}
+								<li>
+									<a href="{text:Link 1 URL}">{text:Link 1}</a>
+								</li>
+							{/block:IfShowLink1}
+							{block:IfShowLink2}
+								<li>
+									<a href="{text:Link 2 URL}">{text:Link 2}</a>
+								</li>
+							{/block:IfShowLink2}
+							{block:IfShowLink3}
+								<li>
+									<a href="{text:Link 3 URL}">{text:Link 3}</a>
+								</li>
+							{/block:IfShowLink3}
+							{block:IfShowLink4}
+								<li>
+									<a href="{text:Link 4 URL}">{text:Link 4}</a>
+								</li>
+							{/block:IfShowLink4}
+							{block:IfShowLink5}
+								<li>
+									<a href="{text:Link 5 URL}">{text:Link 5}</a>
+								</li>
+							{/block:IfShowLink5}
+						</ul>
+					</div>
+				   
+					<div>
+						<li>
+							<a href="{BlogURL}"><i title="Home"></i></a>
+						</li>
+						<li>
+							<a href="/archive"><i title="Archive"></i></a>
+						</li>
+   
+						<li>
+							<a href="{RSS}"><i title="RSS"></i></a>
+						</li>
+   
+						{block:AskEnabled}
+						<li>
+							<a href="/ask"><i title="Ask Me"></i></a>
+						</li>
+						{/block:AskEnabled}
+   
+						{block:SubmissionsEnabled}
+						<li>
+							<a href="/submit" title="Submit Post"><i></i></a>
+						</li>
+						{/block:SubmissionsEnabled}
+					</div>
+ 
+					{block:Pagination}
+						<div>
+							{block:PreviousPage}
+								<a href="{PreviousPage}" data-current-page="{CurrentPage}"><i></i></a>
+							{/block:PreviousPage}
+						   
+							{block:NextPage}
+								<a href="{NextPage}"{CurrentPage}""><i></i></a>
+							{/block:NextPage}
+						</div>
+					{/block:Pagination}
+				</div>
+				<div>
+					<p>&copy; 2019 <a href="https://aliceontheme.tumblr.com/">Alice</a>. All Rights Reserved
+				</div>
+			</div>
+ 
+			<section>
+				{block:Posts}
+					<div>
+						{block:Text}
+							{block:Title}
+								<h2>
+									<a href="{Permalink}">{Title}</a>
+								</h2>
+							{/block:Title}
+ 
+							<div>
+								<div>{Body}</div>
+							</div>
+						{/block:Text}
+					</div>
+   
+					<div>
+						{block:Photo}
+							<img src="{PhotoURL-500}" alt="{PhotoAlt}">
+							{block:Caption}
+								<p>{Caption}</p>
+							{/block:Caption}
+						{/block:Photo}
+					</div>
+   
+					<div>
+						{block:Panorama}
+							{LinkOpenTag}
+								<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}">
+							{CloseOpenTag}
+	   
+							{block:Caption}
+								<p>{Caption}</p>
+							{/block:Caption}
+						{/block:Panorama}
+					</div>
+				   
+					<div>
+						{block:Photoset}
+							{block:Photos}
+								<img src="{PhotoURL-500}"/>
+							{/block:Photos}
+	   
+							{block:Caption}
+								<p>{Caption}</p>
+							{/block:Caption}
+						{/block:Photoset}
+					</div>
+   
+					<div>
+						{block:Quote}
+							<blockquote>
+								&ldquo;{Quote}&rdquo;
+							</blockquote>
+	   
+							{block:Source}
+								<p>- {Source}</p>
+							{/block:Source}
+						{/block:Quote}
+					</div>
+   
+					<div>
+						{block:Link}
+							{block:Thumbnail}
+								<img src="{Thumbnail}" alt="{Name}">
+							{/block:Thumbnail}
+							<a href="{URL}" {Target}>{Name}</a>
+	   
+							{block:Description}
+								<p>{Description}</p>
+							{/block:Description}
+						{/block:Link}
+					</div>
+   
+					<div>
+						{block:Chat}
+							{block:Title}
+								<h2>
+									<a href="{Permalink}">{Title}</a>
+								</h2>
+							{/block:Title}
+	   
+							{block:Lines}
+								{block:Label}
+									<b>{Label}</b>
+								{/block:Label}
+	   
+								<p>{Line}</p>
+							{/block:Lines}
+						{/block:Chat}
+					</div>
+   
+					<div>
+						{block:Audio}
+							{block:AudioEmbed}
+								<div>
+									{AudioEmbed}
+								</div>
+							{/block:AudioEmbed}
+   
+							<ul>
+								{block:TrackName}
+									<li>
+										<b>Title: </b>{TrackName}
+									</li>
+								{/block:TrackName}
+   
+								{block:Artist}
+									<li>
+											<b>Artist: </b>{Artist}
+									</li>
+								{/block:Artist}
+							</ul>
+					   
+							{block:Caption}
+								<p>{Caption}</p>
+							{/block:Caption}
+					{/block:Audio}
+					</div>
+   
+					<div>
+						{block:Video}
+							{Video-500}
+   
+							{block:Caption}
+								<p>{Caption}</p>
+							{/block:Caption}
+					{/block:Video}
+					</div>
+   
+					<div>
+						{block:Answer}
+							<div>
+								<p>
+									{Asker}:<br>
+									<a href="{Permalink}">{Question}</a>
+								</p>
+							</div>
+							<p>{Answer}</p>
+						{/block:Answer}
+					</div>
+				   
+					<div>
+						<hr>
+						{block:HasTags}
+							{block:Tags}
+								<a href="{TagURL}"><span>{Tag}</span></a>
+							{/block:Tags}
+						{/block:HasTags}
+					   
+						{block:Date}
+							<div>{ShortMonth}/{DayOfMonthWithZero}/{Year}
+						{/block:Date} - <a href="{Permalink}">{NoteCountWithLabel}</a></div>
+							   
+						<div>
+							<ul>
+								<li>{LikeButton size="14" color="grey"}</li>
+								<li>{ReblogButton size="14" color="grey"}</li>
+							</ul>
+						</div>
+					</div>
+				{/block:Posts}
+			</section>
+		</div>
+	</body>
+</html>
