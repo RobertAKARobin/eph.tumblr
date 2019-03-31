@@ -15,7 +15,7 @@ exports.watch = function(){
 			()=>src([
 				'./src/*.scss'
 			])
-			.pipe(sass({outputStyle: 'compressed'}))
+			.pipe(sass({outputStyle: 'expanded'}))
 			.pipe(through.obj((file, nil, done)=>{
 				ENV.css = file.contents.toString()
 				done()
@@ -25,7 +25,7 @@ exports.watch = function(){
 				'./src/tumblr.html'
 			])
 			.pipe(through.obj((file, nil, done)=>{
-				file.contents = Buffer.from(file.contents.toString().replace('%css%', `<style>${ENV.css.trim()}</style>`))
+				file.contents = Buffer.from(file.contents.toString().replace('%css%', `<style>\n${ENV.css}</style>`))
 				done(null, file)
 			}))
 			.pipe(rename('output.txt'))
