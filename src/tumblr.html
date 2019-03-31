@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>{Title}</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="RobertAKARobin">
+		%css%
+	</head>
+	<body>
+		<header>
+			<h1><a href="/">{Title}</a></h1>
+			<p>{Description}</p>
+			
+			<ul>
+				<li><a href="{BlogURL}">Home</a></li>
+				<li><a href="/archive">Archive</a></li>
+				<li><a href="/ask">Ask</a></li>
+			</ul>
+		</header>
+
+		<main>
+			{block:Posts}
+			<article>
+				{block:Text}
+				<header>
+					{block:Title}
+					<h2><a href="{Permalink}">{Title}</a></h2>
+					{/block:Title}
+				</header>
+
+				<div>{Body}</div>
+				{/block:Text}
+
+				<footer>
+					<p>
+						{block:Tags}
+						<a href="{TagURL}"><span>{Tag}</span></a>
+						{/block:Tags}
+					</p>
+					
+					{block:Date}
+					<div>
+						{ShortMonth}/{DayOfMonthWithZero}/{Year}
+					</div>
+					{/block:Date}
+					
+					<a href="{Permalink}">{NoteCountWithLabel}</a>
+							
+					<ul>
+						<li>{LikeButton size="14" color="grey"}</li>
+						<li>{ReblogButton size="14" color="grey"}</li>
+					</ul>
+				</footer>
+			</article>
+			{/block:Posts}
+		</main>
+
+		<footer>
+		{block:Pagination}
+			{block:PreviousPage}
+			<a href="{PreviousPage}"></a>
+			{/block:PreviousPage}
+			
+			{block:NextPage}
+			<a href="{NextPage}"></a>
+			{/block:NextPage}
+		{/block:Pagination}
+		</footer>
+	</body>
+</html>
