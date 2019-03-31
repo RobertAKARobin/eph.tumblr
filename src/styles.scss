@@ -29,12 +29,14 @@ h1,h2,h3,h4,h5,h6{
 	font-family:"Arial", sans-serif;
 }
 
-body > header,
-body > main,
-body > footer{
-	width:80vw;
-	margin:0 auto;
-	min-width:320px;
+body{
+	& > header,
+	& > main,
+	& > footer{
+		width:80vw;
+		margin:0 auto;
+		min-width:320px;
+	}
 }
 article{
 	margin:50px auto;
@@ -50,12 +52,15 @@ h1{
 	line-height:54px;
 	padding:1rem 0;
 }
-p a{
-	color:#2b5a77;
-	text-decoration:underline;
-}
-p a:hover{
-	color:#ff6600;
+p{
+	a{
+		color:#2b5a77;
+		text-decoration:underline;
+
+		&:hover{
+			color:#ff6600;
+		}
+	}
 }
 img{
 	display:block;
