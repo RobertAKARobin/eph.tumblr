@@ -3,6 +3,9 @@ $font-header: 'Georgia', serif;
 $font-mono: 'Consolas', monospace;
 
 $main-radius: 3px;
+$color-link: #33c;
+$color-link-hover: #a30;
+$color-border: #ccc;
 
 *{
 	margin:0;
@@ -38,27 +41,29 @@ h1{
 	font-size:3rem;
 	line-height:1em;
 	margin:0.5rem auto;
+	a{
+		color:inherit;
+	}
 }
 h2{
 	font-size:2rem;
 	line-height:1em;
 	margin:0.5em auto;
-
-	& + p{
-		color:#999;
+	a{
+		color:inherit;
 	}
 }
 strong{
 	font-weight:bold;
-	border-bottom:1px solid #ccc;
+	border-bottom:1px solid $color-border;
 }
 em{
 	font-style:italic;
-	border-bottom:1px solid #ccc;
+	border-bottom:1px solid $color-border;
 }
 blockquote{
 	padding-left:1rem;
-	border-left:1px solid #ccc;
+	border-left:1px solid $color-border;
 }
 code{
 	font-family:$font-mono;
@@ -74,14 +79,12 @@ code{
 		border-radius:$main-radius;
 	}
 }
-p{
-	a{
-		color:#6666dd;
-		border-bottom:1px dotted #6666dd;
-	
-		&:hover{
-			color:#ff6600;
-		}
+a{
+	color:$color-link;
+	// border-bottom:1px dotted $color-link;
+
+	&:hover{
+		color:$color-link-hover;
 	}
 }
 
@@ -98,10 +101,17 @@ body{
 	& > header{
 		margin:4rem auto;
 	}
+	& > footer{
+		border-top:1px solid $color-border;
+		font-family:$font-header;
+		text-align:center;
+		padding:1rem 0;
+		margin-bottom:3rem;
+	}
 }
 article{
-	border-top:1px solid #ccc;
-	margin:3rem auto 4rem auto;
+	border-top:1px solid $color-border;
+	margin:3rem auto 3rem auto;
 	text-shadow:1px 1px 0 rgba(255, 255, 255, 0.3);
 
 	& > header{
@@ -151,7 +161,7 @@ article{
 ._notes:not(:empty){
 	margin-top:2rem;
 	padding-top:1rem;
-	border-top:1px solid #ccc;
+	border-top:1px solid $color-border;
 
 	li{
 		margin-bottom:0.5rem;
@@ -171,5 +181,13 @@ article{
 		&:not(:last-child){
 			padding-right:0.5rem;
 		}
+	}
+}
+.pagination{
+	a{
+		display:inline-block;
+		vertical-align:bottom;
+		margin:0 0.5rem;
+		border-bottom:1px dotted $color-border;
 	}
 }

@@ -46,14 +46,18 @@ h1 {
   margin: 0.5rem auto;
 }
 
+h1 a {
+  color: inherit;
+}
+
 h2 {
   font-size: 2rem;
   line-height: 1em;
   margin: 0.5em auto;
 }
 
-h2 + p {
-  color: #999;
+h2 a {
+  color: inherit;
 }
 
 strong {
@@ -85,13 +89,12 @@ pre > code {
   border-radius: 3px;
 }
 
-p a {
-  color: #6666dd;
-  border-bottom: 1px dotted #6666dd;
+a {
+  color: #33c;
 }
 
-p a:hover {
-  color: #ff6600;
+a:hover {
+  color: #a30;
 }
 
 body {
@@ -109,9 +112,17 @@ body > header {
   margin: 4rem auto;
 }
 
+body > footer {
+  border-top: 1px solid #ccc;
+  font-family: "Georgia", serif;
+  text-align: center;
+  padding: 1rem 0;
+  margin-bottom: 3rem;
+}
+
 article {
   border-top: 1px solid #ccc;
-  margin: 3rem auto 4rem auto;
+  margin: 3rem auto 3rem auto;
   text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
 }
 
@@ -189,6 +200,14 @@ article table th, article table td {
 ._note-buttons > *:not(:last-child) {
   padding-right: 0.5rem;
 }
+
+.pagination a {
+  display: inline-block;
+  vertical-align: bottom;
+  margin: 0 0.5rem;
+  border-bottom: 1px dotted #ccc;
+}
+
 </style>
 	</head>
 	<body>
@@ -211,7 +230,7 @@ article table th, article table td {
 					{/block:Title}
 
 					{block:Date}
-					<p>{Year}.{MonthNumberWithZero}.{DayOfMonthWithZero}</p>
+					<p><a href="{Permalink}">{Year}.{MonthNumberWithZero}.{DayOfMonthWithZero}</a></p>
 					{/block:Date}
 				</header>
 
@@ -226,8 +245,8 @@ article table th, article table td {
 
 					<ul class="_note-buttons">						
 						<li><p><a href="{Permalink}">{NoteCountWithLabel}</a></p></li>
-						<li>{LikeButton size="16" color="grey"}</li>
-						<li>{ReblogButton size="16" color="grey"}</li>
+						<li>{LikeButton size="16" color="black"}</li>
+						<li>{ReblogButton size="16" color="black"}</li>
 					</ul>
 				</footer>
 
@@ -241,15 +260,20 @@ article table th, article table td {
 		</main>
 
 		<footer>
-		{block:Pagination}
-			{block:PreviousPage}
-			<a href="{PreviousPage}"></a>
-			{/block:PreviousPage}
-			
-			{block:NextPage}
-			<a href="{NextPage}"></a>
-			{/block:NextPage}
-		{/block:Pagination}
+			<h6>Explain Programmer Humor by <a href="https://www.robertakarobin.com">Robert AKA Robin</a></h6>
+			<p class="pagination">
+			{block:Pagination}
+				{block:PreviousPage}
+				<a href="{PreviousPage}">&lt;Previous Page</a>
+				{/block:PreviousPage}
+
+				<a href="{BlogURL}">Home</a>
+				
+				{block:NextPage}
+				<a href="{NextPage}">Next Page&gt;</a>
+				{/block:NextPage}
+			{/block:Pagination}
+			</p>
 		</footer>
 	</body>
 </html>

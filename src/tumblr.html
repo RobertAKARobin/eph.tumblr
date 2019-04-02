@@ -27,7 +27,7 @@
 					{/block:Title}
 
 					{block:Date}
-					<p>{Year}.{MonthNumberWithZero}.{DayOfMonthWithZero}</p>
+					<p><a href="{Permalink}">{Year}.{MonthNumberWithZero}.{DayOfMonthWithZero}</a></p>
 					{/block:Date}
 				</header>
 
@@ -42,8 +42,8 @@
 
 					<ul class="_note-buttons">						
 						<li><p><a href="{Permalink}">{NoteCountWithLabel}</a></p></li>
-						<li>{LikeButton size="16" color="grey"}</li>
-						<li>{ReblogButton size="16" color="grey"}</li>
+						<li>{LikeButton size="16" color="black"}</li>
+						<li>{ReblogButton size="16" color="black"}</li>
 					</ul>
 				</footer>
 
@@ -57,15 +57,20 @@
 		</main>
 
 		<footer>
-		{block:Pagination}
-			{block:PreviousPage}
-			<a href="{PreviousPage}"></a>
-			{/block:PreviousPage}
-			
-			{block:NextPage}
-			<a href="{NextPage}"></a>
-			{/block:NextPage}
-		{/block:Pagination}
+			<h6>Explain Programmer Humor by <a href="https://www.robertakarobin.com">Robert AKA Robin</a></h6>
+			<p class="pagination">
+			{block:Pagination}
+				{block:PreviousPage}
+				<a href="{PreviousPage}">&lt;Previous Page</a>
+				{/block:PreviousPage}
+
+				<a href="{BlogURL}">Home</a>
+				
+				{block:NextPage}
+				<a href="{NextPage}">Next Page&gt;</a>
+				{/block:NextPage}
+			{/block:Pagination}
+			</p>
 		</footer>
 	</body>
 </html>
