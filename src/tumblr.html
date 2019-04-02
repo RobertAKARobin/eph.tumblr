@@ -5,12 +5,14 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="author" content="RobertAKARobin">
+		<meta name="description" content="{MetaDescription}" />
 		%css%
 	</head>
 	<body>
 		<header>
 			<h1><a href="{BlogURL}">{Title}</a></h1>
 			<p>by <a href="https://www.robertakarobin.com">Robert AKA Robin</a></p>
+			<p>{Description}</p>
 			
 			<!-- <ul>
 				<li><a href="/archive">Archive</a></li>
@@ -21,6 +23,8 @@
 		<main>
 			{block:Posts}
 			<article>
+
+				{block:Text}
 				<header>
 					{block:Title}
 					<h2><a href="{Permalink}">{Title}</a></h2>
@@ -32,6 +36,15 @@
 				</header>
 
 				<div class="_main">{Body}</div>
+				{/block:Text}
+
+				{block:Photo}
+				<div class="_main">
+					<a href="{Permalink}"><img src="{PhotoURL-HighRes}" alt="Test" /></a>
+
+					{Caption}
+				</div>
+				{/block:Photo}
 
 				<footer>
 					<p class="_tags">
@@ -40,14 +53,20 @@
 						{/block:Tags}
 					</p>
 
-					<ul class="_note-buttons">						
-						<li><p><a href="{Permalink}">{NoteCountWithLabel}</a></p></li>
+					<ul class="_note-buttons">
+						{block:IndexPage}
+						<li><p><a href="{Permalink}#notes">{NoteCountWithLabel}</a></p></li>
+						{/block:IndexPage}
 						<li>{LikeButton size="16" color="black"}</li>
 						<li>{ReblogButton size="16" color="black"}</li>
 					</ul>
 				</footer>
 
-				<div class="_notes">
+				<div id="notes"class="_notes">
+					{block:PermalinkPage}
+					<h2>{NoteCountWithLabel}</h2>
+					{/block:PermalinkPage}
+					
 					{block:PostNotes}
 					{PostNotes-16}
 					{/block:PostNotes}
@@ -67,9 +86,14 @@
 				<a href="{BlogURL}">Home</a>
 				
 				{block:NextPage}
-				<a href="{NextPage}">Next Page&gt;</a>
+				<a href="{NextPage}">Next Page of {TotalPages}&gt;</a>
 				{/block:NextPage}
 			{/block:Pagination}
+
+			{block:PermalinkPagination}
+			{block:PreviousPost}<a href="{PreviousPost}">Previous</a>{/block:PreviousPost}
+			{block:NextPost}<a href="{NextPost}">Next</a>{/block:NextPost}
+			{/block:PermalinkPagination}
 			</p>
 		</footer>
 	</body>

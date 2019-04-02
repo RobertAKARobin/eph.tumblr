@@ -129,6 +129,14 @@ article{
 		p{
 			margin:1rem auto;
 		}
+		h1{
+			font-size:2rem;
+			line-height:1em;
+			margin:1em auto;
+			a{
+				color:inherit;
+			}
+		}
 	}
 	& > footer{
 		margin-top:3rem;
