@@ -9,49 +9,49 @@
 	</head>
 	<body>
 		<header>
-			<h1><a href="/">{Title}</a></h1>
-			<p>{Description}</p>
+			<h1><a href="{BlogURL}">{Title}</a></h1>
+			<p>by <a href="https://www.robertakarobin.com">Robert AKA Robin</a></p>
 			
-			<ul>
-				<li><a href="{BlogURL}">Home</a></li>
+			<!-- <ul>
 				<li><a href="/archive">Archive</a></li>
 				<li><a href="/ask">Ask</a></li>
-			</ul>
+			</ul> -->
 		</header>
 
 		<main>
 			{block:Posts}
 			<article>
-				{block:Text}
 				<header>
 					{block:Title}
 					<h2><a href="{Permalink}">{Title}</a></h2>
 					{/block:Title}
+
+					{block:Date}
+					<p>{Year}.{MonthNumberWithZero}.{DayOfMonthWithZero}</p>
+					{/block:Date}
 				</header>
 
-				<div>{Body}</div>
-				{/block:Text}
+				<div class="_main">{Body}</div>
 
 				<footer>
-					<p>
+					<p class="_tags">
 						{block:Tags}
-						<a href="{TagURL}"><span>{Tag}</span></a>
+						<a href="{TagURL}">#{Tag}</a>
 						{/block:Tags}
 					</p>
-					
-					{block:Date}
-					<div>
-						{ShortMonth}/{DayOfMonthWithZero}/{Year}
-					</div>
-					{/block:Date}
-					
-					<a href="{Permalink}">{NoteCountWithLabel}</a>
-							
-					<ul>
-						<li>{LikeButton size="14" color="grey"}</li>
-						<li>{ReblogButton size="14" color="grey"}</li>
+
+					<ul class="_note-buttons">						
+						<li><p><a href="{Permalink}">{NoteCountWithLabel}</a></p></li>
+						<li>{LikeButton size="16" color="grey"}</li>
+						<li>{ReblogButton size="16" color="grey"}</li>
 					</ul>
 				</footer>
+
+				<div class="_notes">
+					{block:PostNotes}
+					{PostNotes-16}
+					{/block:PostNotes}
+				</div>
 			</article>
 			{/block:Posts}
 		</main>

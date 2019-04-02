@@ -24,105 +24,218 @@
   outline: none;
 }
 
-:root, body {
-  width: 100vw;
-  max-width: 100%;
-  overflow-x: hidden;
+div, main, header, section, article {
+  position: relative;
 }
 
 :root {
-  font-family: "Georgia", serif;
+  font-family: "Arial", sans-serif;
   font-size: 16px;
-  line-height: 1.9em;
-  color: #222;
+  line-height: 1.6em;
+  font-weight: 400;
+  color: #000;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Arial", sans-serif;
-}
-
-body > header,
-body > main,
-body > footer {
-  width: 80vw;
-  margin: 0 auto;
-  min-width: 320px;
-}
-
-article {
-  margin: 50px auto;
-  padding: 10px;
-  background-color: #f0f0f0;
-  border: 1px solid #e0e0e0;
-  border-radius: 2px;
+  font-family: "Georgia", serif;
 }
 
 h1 {
-  font-size: 48px;
-  line-height: 54px;
-  padding: 1rem 0;
+  font-size: 3rem;
+  line-height: 1em;
+  margin: 0.5rem auto;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 1em;
+  margin: 0.5em auto;
+}
+
+h2 + p {
+  color: #999;
+}
+
+strong {
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+}
+
+em {
+  font-style: italic;
+  border-bottom: 1px solid #ccc;
+}
+
+blockquote {
+  padding-left: 1rem;
+  border-left: 1px solid #ccc;
+}
+
+code {
+  font-family: "Consolas", monospace;
+  background-color: #f9f9f9;
+  display: inline-block;
+  padding: 0 0.5em;
+  border-radius: 3px;
+}
+
+pre > code {
+  display: block;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
 }
 
 p a {
-  color: #2b5a77;
-  text-decoration: underline;
+  color: #6666dd;
+  border-bottom: 1px dotted #6666dd;
 }
 
 p a:hover {
   color: #ff6600;
 }
 
-img {
+body {
+  width: 100%;
+  max-width: 800px;
+  min-width: 320px;
+  overflow-x: hidden;
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+body > header {
+  margin: 4rem auto;
+}
+
+article {
+  border-top: 1px solid #ccc;
+  margin: 3rem auto 4rem auto;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+article > header {
+  margin: 2rem auto;
+}
+
+article > ._main img {
   display: block;
   max-width: 100%;
+  max-height: 600px;
+  margin: 1rem auto;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+article > ._main p {
+  margin: 1rem auto;
+}
+
+article > footer {
+  margin-top: 3rem;
+}
+
+article table tr:nth-child(odd) {
+  background-color: #eee;
+}
+
+article table thead {
+  font-weight: bold;
+  text-align: left;
+}
+
+article table thead > * {
+  border-bottom: 1px solid #aaa;
+}
+
+article table th, article table td {
+  padding: 0.2rem 1rem;
+}
+
+._tags > * {
+  display: inline-block;
+}
+
+._tags > *:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+._notes:not(:empty) {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #ccc;
+}
+
+._notes:not(:empty) li {
+  margin-bottom: 0.5rem;
+}
+
+._notes:not(:empty) .avatar_frame {
+  padding-right: 0.5rem;
+}
+
+._note-buttons {
+  height: 1rem;
+  margin-top: 0.5rem;
+  vertical-align: middle;
+}
+
+._note-buttons > * {
+  display: inline-block;
+  height: 100%;
+}
+
+._note-buttons > *:not(:last-child) {
+  padding-right: 0.5rem;
 }
 </style>
 	</head>
 	<body>
 		<header>
-			<h1><a href="/">{Title}</a></h1>
-			<p>{Description}</p>
+			<h1><a href="{BlogURL}">{Title}</a></h1>
+			<p>by <a href="https://www.robertakarobin.com">Robert AKA Robin</a></p>
 			
-			<ul>
-				<li><a href="{BlogURL}">Home</a></li>
+			<!-- <ul>
 				<li><a href="/archive">Archive</a></li>
 				<li><a href="/ask">Ask</a></li>
-			</ul>
+			</ul> -->
 		</header>
 
 		<main>
 			{block:Posts}
 			<article>
-				{block:Text}
 				<header>
 					{block:Title}
 					<h2><a href="{Permalink}">{Title}</a></h2>
 					{/block:Title}
+
+					{block:Date}
+					<p>{Year}.{MonthNumberWithZero}.{DayOfMonthWithZero}</p>
+					{/block:Date}
 				</header>
 
-				<div>{Body}</div>
-				{/block:Text}
+				<div class="_main">{Body}</div>
 
 				<footer>
-					<p>
+					<p class="_tags">
 						{block:Tags}
-						<a href="{TagURL}"><span>{Tag}</span></a>
+						<a href="{TagURL}">#{Tag}</a>
 						{/block:Tags}
 					</p>
-					
-					{block:Date}
-					<div>
-						{ShortMonth}/{DayOfMonthWithZero}/{Year}
-					</div>
-					{/block:Date}
-					
-					<a href="{Permalink}">{NoteCountWithLabel}</a>
-							
-					<ul>
-						<li>{LikeButton size="14" color="grey"}</li>
-						<li>{ReblogButton size="14" color="grey"}</li>
+
+					<ul class="_note-buttons">						
+						<li><p><a href="{Permalink}">{NoteCountWithLabel}</a></p></li>
+						<li>{LikeButton size="16" color="grey"}</li>
+						<li>{ReblogButton size="16" color="grey"}</li>
 					</ul>
 				</footer>
+
+				<div class="_notes">
+					{block:PostNotes}
+					{PostNotes-16}
+					{/block:PostNotes}
+				</div>
 			</article>
 			{/block:Posts}
 		</main>
