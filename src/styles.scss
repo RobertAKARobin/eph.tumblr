@@ -1,10 +1,10 @@
-$font-base: 'Arial', sans-serif;
-$font-header: 'Georgia', serif;
-$font-mono: 'Consolas', monospace;
+$font-base: 'Georgia', serif;
+$font-header: 'Inconsolata', monospace;
+$font-mono: 'Inconsolata', monospace;
 
 $main-radius: 3px;
-$color-link: #33c;
-$color-link-hover: #a30;
+$color-link: #00f;
+$color-link-hover: #909;
 $color-border: #ccc;
 
 *{
@@ -38,16 +38,18 @@ h1,h2,h3,h4,h5,h6{
 	font-family:$font-header;
 }
 h1{
-	font-size:3rem;
+	font-size:4rem;
 	line-height:1em;
+	font-weight:bold;
 	margin:0.5rem auto;
 	a{
 		color:inherit;
 	}
 }
 h2{
-	font-size:2rem;
+	font-size:3rem;
 	line-height:1em;
+	font-weight:bold;
 	margin:0.5em auto;
 	a{
 		color:inherit;
@@ -81,7 +83,6 @@ code{
 }
 a{
 	color:$color-link;
-	// border-bottom:1px dotted $color-link;
 
 	&:hover{
 		color:$color-link-hover;
@@ -103,7 +104,6 @@ body{
 	}
 	& > footer{
 		border-top:1px solid $color-border;
-		font-family:$font-header;
 		text-align:center;
 		padding:1rem 0;
 		margin-bottom:3rem;
@@ -128,14 +128,6 @@ article{
 		}
 		p{
 			margin:1rem auto;
-		}
-		h1{
-			font-size:2rem;
-			line-height:1em;
-			margin:1em auto;
-			a{
-				color:inherit;
-			}
 		}
 	}
 	& > footer{

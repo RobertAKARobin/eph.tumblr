@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="author" content="RobertAKARobin">
 		<meta name="description" content="{MetaDescription}" />
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 		<style>
 * {
   margin: 0;
@@ -30,7 +31,7 @@ div, main, header, section, article {
 }
 
 :root {
-  font-family: "Arial", sans-serif;
+  font-family: "Georgia", serif;
   font-size: 16px;
   line-height: 1.6em;
   font-weight: 400;
@@ -38,12 +39,13 @@ div, main, header, section, article {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Georgia", serif;
+  font-family: "Inconsolata", monospace;
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 4rem;
   line-height: 1em;
+  font-weight: bold;
   margin: 0.5rem auto;
 }
 
@@ -52,8 +54,9 @@ h1 a {
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 3rem;
   line-height: 1em;
+  font-weight: bold;
   margin: 0.5em auto;
 }
 
@@ -77,7 +80,7 @@ blockquote {
 }
 
 code {
-  font-family: "Consolas", monospace;
+  font-family: "Inconsolata", monospace;
   background-color: #f9f9f9;
   display: inline-block;
   padding: 0 0.5em;
@@ -91,11 +94,11 @@ pre > code {
 }
 
 a {
-  color: #33c;
+  color: #00f;
 }
 
 a:hover {
-  color: #a30;
+  color: #909;
 }
 
 body {
@@ -115,7 +118,6 @@ body > header {
 
 body > footer {
   border-top: 1px solid #ccc;
-  font-family: "Georgia", serif;
   text-align: center;
   padding: 1rem 0;
   margin-bottom: 3rem;
@@ -142,16 +144,6 @@ article > ._main img {
 
 article > ._main p {
   margin: 1rem auto;
-}
-
-article > ._main h1 {
-  font-size: 2rem;
-  line-height: 1em;
-  margin: 1em auto;
-}
-
-article > ._main h1 a {
-  color: inherit;
 }
 
 article > footer {
@@ -242,22 +234,20 @@ article table th, article table td {
 					{block:Title}
 					<h2><a href="{Permalink}">{Title}</a></h2>
 					{/block:Title}
-
-					{block:Date}
-					<p><a href="{Permalink}">{Year}.{MonthNumberWithZero}.{DayOfMonthWithZero}</a></p>
-					{/block:Date}
 				</header>
-
-				<div class="_main">{Body}</div>
 				{/block:Text}
 
-				{block:Photo}
 				<div class="_main">
-					<a href="{Permalink}"><img src="{PhotoURL-HighRes}" alt="Test" /></a>
+					{block:Text}
+					{Body}
+					{/block:Text}
 
+					{block:Photo}
+					<a href="{Permalink}"><img src="{PhotoURL-HighRes}" alt="Test" /></a>
 					{Caption}
+					{/block:Photo}
 				</div>
-				{/block:Photo}
+				{/block:Text}
 
 				<footer>
 					<p class="_tags">
@@ -267,6 +257,11 @@ article table th, article table td {
 					</p>
 
 					<ul class="_note-buttons">
+						<li>
+							{block:Date}
+							<p><a href="{Permalink}">{Month} {DayOfMonth}, {Year}</a></p>
+							{/block:Date}
+						</li>
 						{block:IndexPage}
 						<li><p><a href="{Permalink}#notes">{NoteCountWithLabel}</a></p></li>
 						{/block:IndexPage}
@@ -289,7 +284,7 @@ article table th, article table td {
 		</main>
 
 		<footer>
-			<h6>Explain Programmer Humor by <a href="https://www.robertakarobin.com">Robert AKA Robin</a></h6>
+			<p>Explain Programmer Humor by <a href="https://www.robertakarobin.com">Robert AKA Robin</a></p>
 			<p class="pagination">
 			{block:Pagination}
 				{block:PreviousPage}

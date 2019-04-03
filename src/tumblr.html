@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="author" content="RobertAKARobin">
 		<meta name="description" content="{MetaDescription}" />
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 		%css%
 	</head>
 	<body>
@@ -29,22 +30,20 @@
 					{block:Title}
 					<h2><a href="{Permalink}">{Title}</a></h2>
 					{/block:Title}
-
-					{block:Date}
-					<p><a href="{Permalink}">{Year}.{MonthNumberWithZero}.{DayOfMonthWithZero}</a></p>
-					{/block:Date}
 				</header>
-
-				<div class="_main">{Body}</div>
 				{/block:Text}
 
-				{block:Photo}
 				<div class="_main">
-					<a href="{Permalink}"><img src="{PhotoURL-HighRes}" alt="Test" /></a>
+					{block:Text}
+					{Body}
+					{/block:Text}
 
+					{block:Photo}
+					<a href="{Permalink}"><img src="{PhotoURL-HighRes}" alt="Test" /></a>
 					{Caption}
+					{/block:Photo}
 				</div>
-				{/block:Photo}
+				{/block:Text}
 
 				<footer>
 					<p class="_tags">
@@ -54,6 +53,11 @@
 					</p>
 
 					<ul class="_note-buttons">
+						<li>
+							{block:Date}
+							<p><a href="{Permalink}">{Month} {DayOfMonth}, {Year}</a></p>
+							{/block:Date}
+						</li>
 						{block:IndexPage}
 						<li><p><a href="{Permalink}#notes">{NoteCountWithLabel}</a></p></li>
 						{/block:IndexPage}
@@ -76,7 +80,7 @@
 		</main>
 
 		<footer>
-			<h6>Explain Programmer Humor by <a href="https://www.robertakarobin.com">Robert AKA Robin</a></h6>
+			<p>Explain Programmer Humor by <a href="https://www.robertakarobin.com">Robert AKA Robin</a></p>
 			<p class="pagination">
 			{block:Pagination}
 				{block:PreviousPage}
