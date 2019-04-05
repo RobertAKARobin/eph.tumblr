@@ -217,7 +217,7 @@ article table th, article table td {
 		<header>
 			<h1><a href="{BlogURL}">{Title}</a></h1>
 			<p>by <a href="https://www.robertakarobin.com">Robert AKA Robin</a></p>
-			<p>{Description}</p>
+			<p>{Description} <a href="/archive">Archive</a></p>
 			
 			<!-- <ul>
 				<li><a href="/archive">Archive</a></li>
@@ -292,6 +292,8 @@ article table th, article table td {
 				{/block:PreviousPage}
 
 				<a href="{BlogURL}">Home</a>
+
+				<a href="/archive">Archive</a>
 				
 				{block:NextPage}
 				<a href="{NextPage}">Next Page of {TotalPages}&gt;</a>
@@ -300,6 +302,7 @@ article table th, article table td {
 
 			{block:PermalinkPagination}
 			{block:PreviousPost}<a href="{PreviousPost}">Previous</a>{/block:PreviousPost}
+			<a href="/archive">Archive</a>
 			{block:NextPost}<a href="{NextPost}">Next</a>{/block:NextPost}
 			{/block:PermalinkPagination}
 			</p>
