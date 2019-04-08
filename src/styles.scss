@@ -2,6 +2,8 @@ $font-base: 'Georgia', serif;
 $font-header: 'Inconsolata', monospace;
 $font-mono: 'Inconsolata', monospace;
 
+$media-sm: (max-width: 500px);
+
 $main-radius: 3px;
 $color-link: #00f;
 $color-link-hover: #909;
@@ -45,6 +47,9 @@ h1{
 	a{
 		color:inherit;
 	}
+	@media #{$media-sm}{
+		font-size:2rem;
+	}
 }
 h2{
 	font-size:3rem;
@@ -53,6 +58,9 @@ h2{
 	margin:0.5em auto;
 	a{
 		color:inherit;
+	}
+	@media #{$media-sm}{
+		font-size:1.5em;
 	}
 }
 strong{
@@ -79,6 +87,7 @@ code{
 		display:block;
 		padding:0.5rem 1rem;
 		border-radius:$main-radius;
+		white-space:pre-wrap;
 	}
 }
 a{

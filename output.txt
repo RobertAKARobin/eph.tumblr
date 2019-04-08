@@ -53,6 +53,12 @@ h1 a {
   color: inherit;
 }
 
+@media (max-width: 500px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
 h2 {
   font-size: 3rem;
   line-height: 1em;
@@ -62,6 +68,12 @@ h2 {
 
 h2 a {
   color: inherit;
+}
+
+@media (max-width: 500px) {
+  h2 {
+    font-size: 1.5em;
+  }
 }
 
 strong {
@@ -91,6 +103,7 @@ pre > code {
   display: block;
   padding: 0.5rem 1rem;
   border-radius: 3px;
+  white-space: pre-wrap;
 }
 
 a {
