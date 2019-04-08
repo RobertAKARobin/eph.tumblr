@@ -78,12 +78,11 @@ h2 a {
 
 strong {
   font-weight: bold;
-  border-bottom: 1px solid #ccc;
 }
 
 em {
   font-style: italic;
-  border-bottom: 1px solid #ccc;
+  text-shadow: 1px 1px 0 rgba(255, 255, 0, 0.5);
 }
 
 blockquote {
@@ -108,10 +107,16 @@ pre > code {
 
 a {
   color: #00f;
+  border-bottom: 1px dotted #00f;
 }
 
-a:hover {
+a:hover, a:visited, a:active {
   color: #909;
+  border-color: #909;
+}
+
+a._img {
+  border: none;
 }
 
 body {
@@ -129,6 +134,14 @@ body > header {
   margin: 4rem auto;
 }
 
+body > header h1 a {
+  border-bottom: 0;
+}
+
+body > header h1 a:hover, body > header h1 a:visited, body > header h1 a:active {
+  color: initial;
+}
+
 body > footer {
   border-top: 1px solid #ccc;
   text-align: center;
@@ -139,7 +152,7 @@ body > footer {
 article {
   border-top: 1px solid #ccc;
   margin: 3rem auto 3rem auto;
-  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 article > header {
@@ -256,7 +269,7 @@ article table th, article table td {
 					{/block:Text}
 
 					{block:Photo}
-					<a href="{Permalink}"><img src="{PhotoURL-HighRes}" alt="Test" /></a>
+					<a href="{Permalink}" class="_img"><img src="{PhotoURL-HighRes}" alt="Test" /></a>
 					{Caption}
 					{/block:Photo}
 				</div>

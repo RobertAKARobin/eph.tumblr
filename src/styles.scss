@@ -65,11 +65,10 @@ h2{
 }
 strong{
 	font-weight:bold;
-	border-bottom:1px solid $color-border;
 }
 em{
 	font-style:italic;
-	border-bottom:1px solid $color-border;
+	text-shadow:1px 1px 0 rgba(255,255,0,0.5);
 }
 blockquote{
 	padding-left:1rem;
@@ -92,9 +91,15 @@ code{
 }
 a{
 	color:$color-link;
+	border-bottom:1px dotted $color-link;
 
-	&:hover{
+	&:hover, &:visited, &:active{
 		color:$color-link-hover;
+		border-color:$color-link-hover;
+	}
+
+	&._img{
+		border:none;
 	}
 }
 
@@ -110,6 +115,15 @@ body{
 
 	& > header{
 		margin:4rem auto;
+
+		h1{
+			a{
+				border-bottom:0;
+				&:hover, &:visited, &:active{
+					color:initial;
+				}
+			}
+		}
 	}
 	& > footer{
 		border-top:1px solid $color-border;
@@ -121,7 +135,7 @@ body{
 article{
 	border-top:1px solid $color-border;
 	margin:3rem auto 3rem auto;
-	text-shadow:1px 1px 0 rgba(255, 255, 255, 0.3);
+	text-shadow:1px 1px 0 rgba(255, 255, 255, 0.5);
 
 	& > header{
 		margin:2rem auto;
