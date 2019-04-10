@@ -16,7 +16,7 @@ exports.watch = function(){
 			()=>src([
 				'./src/*.scss'
 			])
-			.pipe(sass({outputStyle: 'expanded'}))
+			.pipe(sass({outputStyle: 'compressed'}))
 			.pipe(through.obj((file, nil, done)=>{
 				ENV.css = `<style>\n${file.contents.toString()}\n</style>`
 				done()
