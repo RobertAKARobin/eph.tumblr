@@ -31,7 +31,7 @@ div, main, header, section, article{
 
 :root{
 	font-family:$font-base;
-	font-size:16px;
+	font-size:18px;
 	line-height:1.6em;
 	font-weight:400;
 	color:#000;
@@ -40,7 +40,7 @@ h1,h2,h3,h4,h5,h6{
 	font-family:$font-header;
 }
 h1{
-	font-size:4rem;
+	font-size:3rem;
 	line-height:1em;
 	font-weight:bold;
 	margin:0.5rem auto;
@@ -52,7 +52,7 @@ h1{
 	}
 }
 h2{
-	font-size:3rem;
+	font-size:2rem;
 	line-height:1em;
 	font-weight:bold;
 	margin:0.5em auto;
