@@ -130,9 +130,7 @@ body{
 		h1{
 			a{
 				border-bottom:0;
-				&:hover, &:visited, &:active{
-					color:#000;
-				}
+				color:#000 !important;
 			}
 		}
 	}
@@ -144,14 +142,24 @@ body{
 	}
 }
 article{
-	border-top:1px solid $color-border;
-	margin:3rem auto 3rem auto;
+	margin:3rem auto 5rem auto;
 	text-shadow:1px 1px 0 rgba(255, 255, 255, 0.5);
 
 	& > header{
-		margin:2rem auto;
+		border-bottom:1px solid $color-border;
+
+		a{
+			border-bottom:none;
+		}
+		._date{
+			text-align:left;
+			float:left;
+		}
+		._note-buttons{
+			text-align:right;
+		}
 	}
-	& > ._main{
+	._main{
 		img{
 			display:block;
 			max-width:100%;
@@ -162,10 +170,11 @@ article{
 		}
 		p{
 			margin:1rem auto;
+
+			&:last-child{
+				margin-bottom:0;
+			}
 		}
-	}
-	& > footer{
-		margin-top:3rem;
 	}
 	table{
 		tr:nth-child(odd){
@@ -206,8 +215,6 @@ article{
 }
 ._note-buttons{
 	padding-left:0;
-	height:1rem;
-	margin-top:0.5rem;
 	vertical-align:middle;
 	& > *{
 		display:inline-block;
