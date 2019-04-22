@@ -25,27 +25,25 @@
 			{block:Posts}
 			<article>
 
-				<header>
-					{block:Date}
+				<div class="_image">
 					<p class="_date">
 						<a href="{Permalink}">{Month} {DayOfMonth}, {Year}</a>
 					</p>
-					{/block:Date}
+
+					<a href="{Permalink}" class="_img">
+						<img src="{PhotoURL-HighRes}" alt="Test" />
+					</a>
 
 					<ul class="_note-buttons">
 						<li><p><a href="{Permalink}#notes">{NoteCountWithLabel}</a></p></li>
 						<li>{LikeButton size="16" color="black"}</li>
 						<li>{ReblogButton size="16" color="black"}</li>
 					</ul>
-				</header>
-
-				<div class="_main">
-					{block:Photo}
-					<a href="{Permalink}" class="_img"><img src="{PhotoURL-HighRes}" alt="Test" /></a>
-					{Caption}
-					{/block:Photo}
 				</div>
-				{/block:Text}
+
+				<div class="_description">
+					{Caption}
+				</div>
 
 				<footer>
 					<p class="_tags">
