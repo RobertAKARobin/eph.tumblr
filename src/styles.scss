@@ -121,26 +121,44 @@ body{
 	box-sizing:border-box;
 	background-color:#fff;
 
-	& > header{
-		margin:4rem auto;
-
-		h1{
-			a{
-				border-bottom:0;
-				color:#000 !important;
+	&._index{
+		& > header{
+			margin:4rem auto;
+	
+			h1{
+				a{
+					border-bottom:0;
+					color:#000 !important;
+				}
+			}
+		}
+		article{
+			border-bottom:1px solid $color-border;
+			padding-bottom:2rem;
+			margin-bottom:4rem;
+		}
+	}
+	&._permalink{
+		& > header{
+			text-align:center;
+			margin:2rem auto 0 auto;
+			h1{
+				font-size:1rem;
+			}
+		}
+		._image{
+			._date{
+				margin-bottom:2rem;
 			}
 		}
 	}
 	& > footer{
-		border-top:1px solid $color-border;
 		text-align:center;
 		padding:1rem 0;
-		margin-bottom:3rem;
+		margin:2rem auto 3rem auto;
 	}
 }
 article{
-	margin:3rem auto 5rem auto;
-
 	._image, ._description{
 		img{
 			display:block;
@@ -153,8 +171,6 @@ article{
 
 	._image{
 		background-color:#fff;
-		border-top:1px solid #000;
-		padding:1rem 0;
 		text-align:center;
 	}
 	._description{
@@ -193,8 +209,6 @@ article{
 }
 ._notes:not(:empty){
 	margin-top:2rem;
-	padding-top:1rem;
-	border-top:1px solid $color-border;
 
 	li{
 		margin-bottom:0.5rem;

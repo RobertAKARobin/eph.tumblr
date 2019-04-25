@@ -9,36 +9,33 @@
 		<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 		%css%
 	</head>
-	<body>
+	<body class="{block:IndexPage}_index{/block:IndexPage}{block:PermalinkPage}_permalink{/block:PermalinkPage}">
+		
+		{block:IndexPage}
 		<header>
 			<h1><a href="{BlogURL}">{Title}</a></h1>
 			<p>by <a href="https://www.robertakarobin.com">Robert AKA Robin</a></p>
 			<p>{Description} <a href="/archive">Archive</a></p>
-			
-			<!-- <ul>
-				<li><a href="/archive">Archive</a></li>
-				<li><a href="/ask">Ask</a></li>
-			</ul> -->
 		</header>
+		{/block:IndexPage}
+
+		{block:PermalinkPage}
+		<header>
+			<h1><a href="{BlogURL}">{Title}</a> by <a href="https://www.robertakarobin.com">Robert AKA Robin</a></h1>
+		</header>
+		{/block:PermalinkPage}
 
 		<main>
 			{block:Posts}
 			<article>
 
 				<div class="_image">
-					<p class="_date">
-						<a href="{Permalink}">{Month} {DayOfMonth}, {Year}</a>
-					</p>
-
+					{block:PermalinkPage}
+					<p class="_date">{Month} {DayOfMonth}, {Year}</p>
+					{/block:PermalinkPage}
 					<a href="{Permalink}" class="_img">
 						<img src="{PhotoURL-HighRes}" alt="Test" />
 					</a>
-
-					<ul class="_note-buttons">
-						<li><p><a href="{Permalink}#notes">{NoteCountWithLabel}</a></p></li>
-						<li>{LikeButton size="16" color="black"}</li>
-						<li>{ReblogButton size="16" color="black"}</li>
-					</ul>
 				</div>
 
 				<div class="_description">
@@ -53,6 +50,7 @@
 					</p>
 
 					<ul class="_note-buttons">
+						<li><a href="{Permalink}">{Month} {DayOfMonth}, {Year}</a></li>
 						{block:IndexPage}
 						<li><p><a href="{Permalink}#notes">{NoteCountWithLabel}</a></p></li>
 						{/block:IndexPage}
@@ -75,7 +73,7 @@
 		</main>
 
 		<footer>
-			<p>Explain Programmer Humor by <a href="https://www.robertakarobin.com">Robert AKA Robin</a></p>
+			<p>{Title} by <a href="https://www.robertakarobin.com">Robert AKA Robin</a></p>
 			<p class="pagination">
 			{block:Pagination}
 				{block:PreviousPage}
