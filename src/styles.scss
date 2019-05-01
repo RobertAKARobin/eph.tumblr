@@ -78,6 +78,13 @@ blockquote{
 ul, ol{
 	padding-left:1em;
 }
+p{
+	margin:1rem auto;
+
+	&:last-of-type{
+		margin-bottom:0;
+	}
+}
 li{
 	ul &{
 		list-style-type: disc;
@@ -111,6 +118,9 @@ a{
 		color:$color-link-hover;
 		border-color:$color-link-hover;
 	}
+}
+summary{
+	cursor:pointer;
 }
 
 body{
@@ -158,15 +168,6 @@ article{
 	._image{
 		background-color:#fff;
 		text-align:center;
-	}
-	._description{
-		p{
-			margin:1rem auto;
-
-			&:last-child{
-				margin-bottom:0;
-			}
-		}
 	}
 	table{
 		tr:nth-child(odd){
