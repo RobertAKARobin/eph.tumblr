@@ -8,34 +8,41 @@
 		<meta name="description" content="{MetaDescription}" />
 		<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 		<style>
-*{margin:0;border:0;padding:0;font-size:inherit;font-family:inherit;font-weight:inherit;font-style:inherit;border-collapse:collapse;text-decoration:inherit;color:inherit;list-style:none}*:focus{outline:none}div,main,header,section,article{position:relative}:root{font-family:"Georgia",serif;font-size:18px;line-height:1.6em;font-weight:400;color:#000;text-shadow:1px 1px 0 rgba(255,255,255,0.5)}h1,h2,h3,h4,h5,h6{font-family:"Inconsolata",monospace}h1{font-size:3rem;line-height:1em;font-weight:bold;margin:0.5rem auto}h1 a{color:inherit}@media (max-width: 500px){h1{font-size:2rem}}h2{font-size:2rem;line-height:1em;font-weight:bold;margin:0.5em auto}h2 a{color:inherit}@media (max-width: 500px){h2{font-size:1.5em}}strong{font-weight:bold}em{font-style:italic;background-color:#ffffdd}blockquote{padding-left:1rem;border-left:1px solid #ccc}ul,ol{padding-left:1em}ul li{list-style-type:disc}ol li{list-style-type:decimal}code{font-family:"Inconsolata",monospace;background-color:#f9f9f9;display:inline-block;padding:0 0.5em;border-radius:3px}pre>code{display:block;padding:0.5rem 1rem;border-radius:3px;white-space:pre-wrap;margin-bottom:1em}a{color:blue;border-bottom:1px dotted blue}a:hover,a:visited,a:active{color:#909;border-color:#909}body{width:100%;max-width:800px;min-width:320px;overflow-x:hidden;margin:0 auto;padding:0 1rem;box-sizing:border-box;background-color:#fff}body._index>header{margin:4rem auto}body._index>header h1 a{border-bottom:0;color:#000 !important}body._index article{border-bottom:1px solid #ccc;padding-bottom:2rem;margin-bottom:4rem}body._permalink>header{text-align:center;margin:2rem auto 0 auto}body._permalink>header h1{font-size:1rem}body._permalink ._image ._date{margin-bottom:2rem}body>footer{text-align:center;padding:1rem 0;margin:2rem auto 3rem auto}article ._image img,article ._description img{display:block;max-width:100%;max-height:600px;margin:1rem auto;box-shadow:1px 1px 5px 0px #eee}article ._image{background-color:#fff;text-align:center}article ._description p{margin:1rem auto}article ._description p:last-child{margin-bottom:0}article table tr:nth-child(odd){background-color:#eee}article table thead{font-weight:bold;text-align:left}article table thead>*{border-bottom:1px solid #aaa}article table th,article table td{padding:0.2rem 1rem}._tags>*{display:inline-block}._tags>*:not(:last-child){margin-right:0.5rem}._notes:not(:empty){margin-top:2rem}._notes:not(:empty) li{margin-bottom:0.5rem}._notes:not(:empty) .avatar_frame{padding-right:0.5rem}._note-buttons{padding-left:0;vertical-align:middle}._note-buttons>*{display:inline-block;height:100%}._note-buttons>*:not(:last-child){padding-right:0.5rem}.pagination a{display:inline-block;vertical-align:bottom;margin:0 0.5rem;border-bottom:1px dotted #ccc}
+*{margin:0;border:0;padding:0;font-size:inherit;font-family:inherit;font-weight:inherit;font-style:inherit;border-collapse:collapse;text-decoration:inherit;color:inherit;list-style:none}*:focus{outline:none}div,main,header,section,article{position:relative}:root{font-family:"Georgia",serif;font-size:18px;line-height:1.6em;font-weight:400;color:#000;text-shadow:1px 1px 0 rgba(255,255,255,0.5)}h1,h2,h3,h4,h5,h6{font-family:"Inconsolata",monospace}h1{font-size:3rem;line-height:1em;font-weight:bold;margin:0.5rem auto}h1 a{color:inherit}@media (max-width: 500px){h1{font-size:2rem}}h2{font-size:2rem;line-height:1em;font-weight:bold;margin:0.5em auto}h2 a{color:inherit}@media (max-width: 500px){h2{font-size:1.5em}}strong{font-weight:bold}em{font-style:italic;background-color:#ffffdd}blockquote{padding-left:1rem;border-left:1px solid #ccc}ul,ol{padding-left:1em}ul li{list-style-type:disc}ol li{list-style-type:decimal}code{font-family:"Inconsolata",monospace;background-color:#f9f9f9;display:inline-block;padding:0 0.5em;border-radius:3px}pre>code{display:block;padding:0.5rem 1rem;border-radius:3px;white-space:pre-wrap;margin-bottom:1em}a{color:blue;border-bottom:1px dotted blue;cursor:pointer}a:hover,a:visited,a:active{color:#909;border-color:#909}body{width:100%;max-width:800px;min-width:320px;overflow-x:hidden;margin:0 auto;padding:0 1rem;box-sizing:border-box;background-color:#fff}body>header{margin:4rem auto}body>header h1 a{border-bottom:0;color:#000 !important}body article{border-bottom:1px solid #ccc;padding-bottom:2rem;margin-bottom:4rem}body>footer{text-align:center;padding:1rem 0;margin:2rem auto 3rem auto}article ._image img,article ._description img{display:block;max-width:100%;max-height:600px;margin:1rem auto;box-shadow:1px 1px 5px 0px #eee}article ._image{background-color:#fff;text-align:center}article ._description p{margin:1rem auto}article ._description p:last-child{margin-bottom:0}article table tr:nth-child(odd){background-color:#eee}article table thead{font-weight:bold;text-align:left}article table thead>*{border-bottom:1px solid #aaa}article table th,article table td{padding:0.2rem 1rem}._tags>*{display:inline-block}._tags>*:not(:last-child){margin-right:0.5rem}._notes:not(:empty){margin-top:2rem}._notes:not(:empty) li{margin-bottom:0.5rem}._notes:not(:empty) .avatar_frame{padding-right:0.5rem}._note-buttons{padding-left:0;vertical-align:middle}._note-buttons>*{display:inline-block;height:100%}._note-buttons>*:not(:last-child){padding-right:0.5rem}.pagination a{display:inline-block;vertical-align:bottom;margin:0 0.5rem;border-bottom:1px dotted #ccc}
 
 </style>
 	</head>
-	<body class="{block:IndexPage}_index{/block:IndexPage}{block:PermalinkPage}_permalink{/block:PermalinkPage}">
+	<body>
 		
-		{block:IndexPage}
 		<header>
-			<h1><a href="{BlogURL}">{Title}</a></h1>
-			<p>by <a href="https://www.robertakarobin.com">Robert AKA Robin</a></p>
-			<p>{Description} <a href="/archive">Archive</a></p>
+			<h1>
+				<a href="{BlogURL}">{Title}</a>
+				{block:PermalinkPage}
+				{block:Posts}
+				<br />{Month} {DayOfMonth}, {Year}
+				{/block:Posts}
+				{/block:PermalinkPage}
+			</h1>
+			<p>by <a href="https://www.robertakarobin.com">Robert AKA Robin</a>. <a href="/archive">See all posts</a></p>
+			<details>
+				<summary>{Description} <a>Why?</a></summary>
+				<div>
+					<p>Reading programmer humor is a good way to learn.</p>
+					<ol>
+						<li>It's fun.</li>
+						<li>You run into new concepts.</li>
+						<li>A lot of jokes are about things that all programmers struggle with. This helps programmers see that they're not alone. It fights <a href="https://en.wikipedia.org/wiki/Impostor_syndrome">Impostor Syndrome</a>.</li>
+					</ol>
+					<p>Summon me on Reddit (<a href="https://reddit.com/user/robertgfthomas">/u/robertgfthomas</a>) or e-mail me (<a href="mailto:contact@robertakarobin.com">contact@robertakarobin.com</a>) if you'd like something explained.</p>
+				</div>
+			</details>
 		</header>
-		{/block:IndexPage}
-
-		{block:PermalinkPage}
-		<header>
-			<h1><a href="{BlogURL}">{Title}</a> by <a href="https://www.robertakarobin.com">Robert AKA Robin</a></h1>
-		</header>
-		{/block:PermalinkPage}
 
 		<main>
 			{block:Posts}
 			<article>
 
 				<div class="_image">
-					{block:PermalinkPage}
-					<p class="_date">{Month} {DayOfMonth}, {Year}</p>
-					{/block:PermalinkPage}
 					<a href="{Permalink}" class="_img">
 						<img src="{PhotoURL-HighRes}" alt="Test" />
 					</a>
@@ -76,7 +83,7 @@
 		</main>
 
 		<footer>
-			<p>{Title} by <a href="https://www.robertakarobin.com">Robert AKA Robin</a></p>
+			<p><a href="{BlogURL}">{Title}</a> by <a href="https://www.robertakarobin.com">Robert AKA Robin</a></p>
 			<p class="pagination">
 			{block:Pagination}
 				{block:PreviousPage}

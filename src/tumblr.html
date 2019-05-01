@@ -9,30 +9,37 @@
 		<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 		%css%
 	</head>
-	<body class="{block:IndexPage}_index{/block:IndexPage}{block:PermalinkPage}_permalink{/block:PermalinkPage}">
+	<body>
 		
-		{block:IndexPage}
 		<header>
-			<h1><a href="{BlogURL}">{Title}</a></h1>
-			<p>by <a href="https://www.robertakarobin.com">Robert AKA Robin</a></p>
-			<p>{Description} <a href="/archive">Archive</a></p>
+			<h1>
+				<a href="{BlogURL}">{Title}</a>
+				{block:PermalinkPage}
+				{block:Posts}
+				<br />{Month} {DayOfMonth}, {Year}
+				{/block:Posts}
+				{/block:PermalinkPage}
+			</h1>
+			<p>by <a href="https://www.robertakarobin.com">Robert AKA Robin</a>. <a href="/archive">See all posts</a></p>
+			<details>
+				<summary>{Description} <a>Why?</a></summary>
+				<div>
+					<p>Reading programmer humor is a good way to learn.</p>
+					<ol>
+						<li>It's fun.</li>
+						<li>You run into new concepts.</li>
+						<li>A lot of jokes are about things that all programmers struggle with. This helps programmers see that they're not alone. It fights <a href="https://en.wikipedia.org/wiki/Impostor_syndrome">Impostor Syndrome</a>.</li>
+					</ol>
+					<p>Summon me on Reddit (<a href="https://reddit.com/user/robertgfthomas">/u/robertgfthomas</a>) or e-mail me (<a href="mailto:contact@robertakarobin.com">contact@robertakarobin.com</a>) if you'd like something explained.</p>
+				</div>
+			</details>
 		</header>
-		{/block:IndexPage}
-
-		{block:PermalinkPage}
-		<header>
-			<h1><a href="{BlogURL}">{Title}</a> by <a href="https://www.robertakarobin.com">Robert AKA Robin</a></h1>
-		</header>
-		{/block:PermalinkPage}
 
 		<main>
 			{block:Posts}
 			<article>
 
 				<div class="_image">
-					{block:PermalinkPage}
-					<p class="_date">{Month} {DayOfMonth}, {Year}</p>
-					{/block:PermalinkPage}
 					<a href="{Permalink}" class="_img">
 						<img src="{PhotoURL-HighRes}" alt="Test" />
 					</a>
@@ -73,7 +80,7 @@
 		</main>
 
 		<footer>
-			<p>{Title} by <a href="https://www.robertakarobin.com">Robert AKA Robin</a></p>
+			<p><a href="{BlogURL}">{Title}</a> by <a href="https://www.robertakarobin.com">Robert AKA Robin</a></p>
 			<p class="pagination">
 			{block:Pagination}
 				{block:PreviousPage}

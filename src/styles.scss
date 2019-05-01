@@ -105,6 +105,7 @@ code{
 a{
 	color:$color-link;
 	border-bottom:1px dotted $color-link;
+	cursor:pointer;
 
 	&:hover, &:visited, &:active{
 		color:$color-link-hover;
@@ -122,36 +123,20 @@ body{
 	box-sizing:border-box;
 	background-color:#fff;
 
-	&._index{
-		& > header{
-			margin:4rem auto;
-	
-			h1{
-				a{
-					border-bottom:0;
-					color:#000 !important;
-				}
+	& > header{
+		margin:4rem auto;
+
+		h1{
+			a{
+				border-bottom:0;
+				color:#000 !important;
 			}
-		}
-		article{
-			border-bottom:1px solid $color-border;
-			padding-bottom:2rem;
-			margin-bottom:4rem;
 		}
 	}
-	&._permalink{
-		& > header{
-			text-align:center;
-			margin:2rem auto 0 auto;
-			h1{
-				font-size:1rem;
-			}
-		}
-		._image{
-			._date{
-				margin-bottom:2rem;
-			}
-		}
+	article{
+		border-bottom:1px solid $color-border;
+		padding-bottom:2rem;
+		margin-bottom:4rem;
 	}
 	& > footer{
 		text-align:center;
