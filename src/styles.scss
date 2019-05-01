@@ -5,8 +5,9 @@ $font-mono: 'Inconsolata', monospace;
 $media-sm: (max-width: 500px);
 
 $main-radius: 3px;
-$color-link: #00f;
-$color-link-hover: #909;
+$color-text:#292929;
+$color-link: #19a5ff;
+$color-link-hover: #ff9500;
 $color-border: #ccc;
 
 *{
@@ -21,6 +22,8 @@ $color-border: #ccc;
 	text-decoration:inherit;
 	color:inherit;
 	list-style:none;
+	-webkit-font-smoothing:antialiased;
+	text-rendering:optimizeLegibility;
 }
 *:focus{
 	outline:none;
@@ -32,9 +35,10 @@ div, main, header, section, article{
 :root{
 	font-family:$font-base;
 	font-size:18px;
-	line-height:1.6em;
+	line-height:1.58em;
+	letter-spacing:-0.003em;
 	font-weight:400;
-	color:#000;
+	color:$color-text;
 	text-shadow:1px 1px 0 rgba(255, 255, 255, 0.5);
 }
 h1,h2,h3,h4,h5,h6{
@@ -44,7 +48,7 @@ h1{
 	font-size:3rem;
 	line-height:1em;
 	font-weight:bold;
-	margin:0.5rem auto;
+	margin:1rem auto;
 	a{
 		color:inherit;
 	}
@@ -79,7 +83,7 @@ ul, ol{
 	padding-left:1em;
 }
 p{
-	margin:1rem auto;
+	margin:1.3rem auto;
 
 	&:last-of-type{
 		margin-bottom:0;
@@ -114,7 +118,7 @@ a{
 	border-bottom:1px dotted $color-link;
 	cursor:pointer;
 
-	&:hover, &:visited, &:active{
+	&:hover, &:active{
 		color:$color-link-hover;
 		border-color:$color-link-hover;
 	}
@@ -125,7 +129,7 @@ summary{
 
 body{
 	width:100%;
-	max-width:800px;
+	max-width:850px;
 	min-width:320px;
 	overflow-x:hidden;
 	margin:0 auto;
@@ -133,15 +137,16 @@ body{
 	box-sizing:border-box;
 	background-color:#fff;
 
-	& > header{
-		margin:4rem auto;
-
+	&.index{
 		h1{
 			a{
 				border-bottom:0;
-				color:#000 !important;
+				color:$color-text !important;
 			}
 		}
+	}
+	& > header{
+		margin:4rem auto;
 	}
 	article{
 		border-bottom:1px solid $color-border;
@@ -184,6 +189,12 @@ article{
 		th, td{
 			padding:0.2rem 1rem;
 		}
+	}
+}
+._description{
+	a:visited{
+		color:$color-link-hover;
+		border-color:$color-link-hover;
 	}
 }
 ._tags{
